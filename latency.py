@@ -1,7 +1,7 @@
 import csv
-from cache import workloads
-from cache import parse
-from cache import write_csv
+from parser import workloads
+from parser import parse
+from parser import write_csv
 
 
 def get_data_csv(baseline, victima):

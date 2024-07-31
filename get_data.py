@@ -1,6 +1,6 @@
 import csv
-from cache import parse_data
-from cache import write_csv
+from parser import parse_data
+from parser import write_csv
 
 
 columns = [

@@ -1,8 +1,8 @@
 import csv
-from cache import workloads
-from cache import parse
-from cache import parse_data
-from cache import write_csv
+from parser import workloads
+from parser import parse
+from parser import parse_data
+from parser import write_csv
 
 
 def get_mpki(misses, instructions):

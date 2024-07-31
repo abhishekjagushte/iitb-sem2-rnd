@@ -1,35 +1,5 @@
 import csv
 
-columns = [
-    "stlb.miss",
-    "L1-D.loads-page_table",
-    "L1-D.load-misses-page_table",
-    "L1-D.loads-tlb_entry",
-    "L1-D.load-misses-tlb_entry",
-    "L1-D.loads-non_page_table",
-    "L1-D.load-misses-non_page_table",
-    "L2.loads-page_table",
-    "L2.load-misses-page_table",
-    "L2.loads-tlb_entry",
-    "L2.load-misses-tlb_entry",
-    "L2.loads-non_page_table",
-    "L2.load-misses-non_page_table",
-    "pwc_L2.access",
-    "pwc_L2.miss",
-    "pwc_L3.access",
-    "pwc_L3.miss",
-    "pwc_L4.access",
-    "pwc_L4.miss",
-    "PTW_0.page_walks",
-    "dram.reads",
-    "dram.writes",
-    "L2.tloads",
-    "L2.tload-misses",
-    "L2.tstores",
-    "L2.tstore-misses",
-    "ipc",
-]
-
 workloads = [
     "bc",
     "bfs",
