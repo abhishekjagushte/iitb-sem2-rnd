@@ -31,6 +31,7 @@ def remove_lines_with_pattern(input_file, output_file, pattern):
         lines = file.readlines()
     
     with open(output_file, 'w') as file:
+        file.write("EIP,VPN,PS,E\n")
         for line in lines:
             if re.match(pattern, line):
                 file.write(line)
@@ -44,7 +45,7 @@ pattern = r"([0-9]+,){3}[0-9]*"
 
 
 configs ={
-    # "only_l2_hits": r"([0-9]+,){3}7",
+    "only_l2_hits": r"([0-9]+,){3}7",
     # "all": r"([0-9]+,){3}[0-9]*",
     "L2_hits_and_miss": r"([0-9]+,){3}[789]",
     "L2_miss": r"([0-9]+,){3}[89]"

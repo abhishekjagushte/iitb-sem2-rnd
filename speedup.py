@@ -23,7 +23,7 @@ def get_data_csv(baseline, comparison):
 
 
 
-basepath = "./victima/baseline"
+basepath = "./normal/baseline"
 comparison_path = "./victima/pl2real"
 res = parse(basepath, comparison_path)
 baseline = res['baseline']

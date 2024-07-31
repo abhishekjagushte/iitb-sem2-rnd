@@ -22,7 +22,12 @@ columns = [
     "pwc_L4.miss",
     "PTW_0.page_walks",
     "dram.reads",
-    "dram.writes"
+    "dram.writes",
+    "L2.tloads",
+    "L2.tload-misses",
+    "L2.tstores",
+    "L2.tstore-misses",
+    "ipc",
 ]
 
 workloads = [
@@ -108,17 +113,3 @@ def parse(base_folder, comparison_folder):
         "baseline": baseline,
         "comparison": comparison
     }
-
-
-
-basepath = "./victima/baseline"
-comparison_path = "./victima/pl2real"
-res = parse(basepath, comparison_path)
-baseline = res['baseline']
-victima = res['comparison']
-
-baseline_data = get_data_csv(baseline)
-victima_data = get_data_csv(victima)
-    
-write_csv("baseline.csv", baseline_data)
-write_csv("victima.csv", victima_data)

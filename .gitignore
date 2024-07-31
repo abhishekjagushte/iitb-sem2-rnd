@@ -1,4 +1,6 @@
 access_patterns/*/L2_*
 access_patterns/*/only*
+access_patterns/*/*.out
 __pycache__/*
 *.pyc
+prefetcher_comparisons
