@@ -4,3 +4,7 @@ access_patterns/*/*.out
 __pycache__/*
 *.pyc
 prefetcher_comparisons
+baseline.csv
+data.csv
+speedup_normal.csv
+victima.csv
