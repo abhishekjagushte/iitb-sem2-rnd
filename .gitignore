@@ -8,3 +8,4 @@ baseline.csv
 data.csv
 speedup_normal.csv
 victima.csv
+.venv/*

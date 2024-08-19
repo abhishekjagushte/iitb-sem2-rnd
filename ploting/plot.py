@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 X_TITLE = 'Workload'
-Y_TITLE = 'Speedup'
-Y_MIN = 0.5
-Y_MAX = 1.9
-FILE_NAME = 'scope'
-Y_TICKS = 0.2
+Y_TITLE = 'STLB Miss Penalty (Cycles)'
+Y_MIN = 0
+Y_MAX = 200
+FILE_NAME = 'stlb_mp'
+Y_TICKS = 20
 
 
 # Read the CSV data into a DataFrame
@@ -17,7 +17,7 @@ df = pd.read_csv('csvs/' + FILE_NAME + '.csv')
 df.set_index('workload', inplace=True)
 
 # Generate a range of monochrome colors
-colors = [str(0.25 * i) for i in range(1, len(df.columns) + 1)]
+colors = [str(0.75/(len(df.columns)) * i) for i in range(1, len(df.columns) + 1)]
 
 # Determine the number of columns to set figure width accordingly
 fig_width = max(10, 3.5 * len(df.columns))
