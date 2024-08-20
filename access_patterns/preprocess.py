@@ -31,7 +31,7 @@ def remove_lines_with_pattern(input_file, output_file, pattern):
         lines = file.readlines()
     
     with open(output_file, 'w') as file:
-        file.write("EIP,VPN,PS,E\n")
+        file.write("EIP,VPN,PS,E,TS\n")
         for line in lines:
             if re.match(pattern, line):
                 file.write(line)
@@ -40,7 +40,7 @@ def remove_lines_with_pattern(input_file, output_file, pattern):
 input_file = 'bc.out'
 output_file = 'all.csv'
 
-pattern = r"([0-9]+,){3}[0-9]*"
+pattern = r"([0-9]+,){4}[0-9]*"
 # pattern = r"([0-9]+,){3}7"
 
 
@@ -52,7 +52,7 @@ configs ={
 }
 
 
-directory_path = '/home/abhishekjagushte/IITB/rnd/iitb-sem2-rnd/access_patterns/10M'
+directory_path = '/home/abhishekjagushte/IITB/rnd/iitb-sem2-rnd/access_patterns/500M'
 list_and_process_files(directory_path, configs)
 
 # remove_lines_with_pattern(input_file, output_file, pattern)
