@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 X_TITLE = 'Workload'
-Y_TITLE = 'STLB Miss Penalty (Cycles)'
+Y_TITLE = 'MPKI'
 Y_MIN = 0
-Y_MAX = 200
-FILE_NAME = 'stlb_mp'
-Y_TICKS = 20
+Y_MAX = 100
+FILE_NAME = 'mpkis'
+Y_TICKS = 10
 
 
 # Read the CSV data into a DataFrame

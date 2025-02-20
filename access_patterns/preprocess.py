@@ -7,7 +7,6 @@ def list_and_process_files(directory, config):
         entries = os.listdir(directory)
 
         for dir in config.keys():
-            print(dir)
             output_dir = os.path.join(directory, dir)
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
@@ -31,28 +30,24 @@ def remove_lines_with_pattern(input_file, output_file, pattern):
         lines = file.readlines()
     
     with open(output_file, 'w') as file:
-        file.write("EIP,VPN,PS,E,TS\n")
+        file.write("eip,vpn,ps,e,ts\n")
         for line in lines:
             if re.match(pattern, line):
                 file.write(line)
-
-# Example usage
-input_file = 'bc.out'
-output_file = 'all.csv'
 
 pattern = r"([0-9]+,){4}[0-9]*"
 # pattern = r"([0-9]+,){3}7"
 
 
 configs ={
-    "only_l2_hits": r"([0-9]+,){3}7",
+    # "only_l2_hits": r"([0-9]+,){3}7",
     # "all": r"([0-9]+,){3}[0-9]*",
-    "L2_hits_and_miss": r"([0-9]+,){3}[789]",
-    "L2_miss": r"([0-9]+,){3}[89]"
+    # "L2_hits_and_miss": r"([0-9]+,){3}[789]",
+    "NUCA_hit": r"([0-9]+,){3}8,[0-9]*",
+    # "L2_miss": r"([0-9]+,){3}[89]"
 }
 
 
 directory_path = '/home/abhishekjagushte/IITB/rnd/iitb-sem2-rnd/access_patterns/500M'
 list_and_process_files(directory_path, configs)
 
-# remove_lines_with_pattern(input_file, output_file, pattern)

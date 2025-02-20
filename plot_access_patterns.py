@@ -3,32 +3,32 @@ import pandas as pd
 import numpy as np
 
 # Read data from CSV file
-df = pd.read_csv('./access_patterns/500M/L2_miss/bc.out')
+df = pd.read_csv('./access_patterns/500M/L2_miss/rnd.out')
 
 # Plotting
 plt.figure(figsize=(15, 10))
 
 # Create scatter plot
-for eip in df['EIP'].unique():
-    subset = df[df['EIP'] == eip]
+for eip in df['eip'].unique():
+    subset = df[df['eip'] == eip]
     
     if subset.size > 10000:
-        print(eip , subset.size, subset['VPN'].min(), subset['VPN'].max())
+        print(eip , subset.size, subset['vpn'].min(), subset['vpn'].max())
 
-        for event in df['E'].unique():
-            event_subset = subset[subset['E'] == event]
+        for event in df['e'].unique():
+            event_subset = subset[subset['e'] == event]
 
-            plt.scatter(event_subset['TS'], event_subset['VPN'], label=f'Event {event}', alpha=0.7)
-            plt.plot(event_subset['TS'], event_subset['VPN'], alpha=0.7)
+            plt.scatter(event_subset['ts'], event_subset['vpn'], label=f'Event {event}', alpha=0.7)
+            plt.plot(event_subset['ts'], event_subset['vpn'], alpha=0.7)
 
 
-        # plt.scatter(subset['TS'], subset['VPN'], label=f'EIP {eip}', alpha=0.7)
-        # plt.plot(subset['TS'], subset['VPN'], label=f'EIP {eip}', alpha=0.7)
+        # plt.scatter(subset['ts'], subset['vpn'], label=f'eip {eip}', alpha=0.7)
+        # plt.plot(subset['ts'], subset['vpn'], label=f'eip {eip}', alpha=0.7)
 
         # Adding labels and title
-        plt.xlabel('Serial Number')
-        plt.ylabel('VPN')
-        plt.title(f'VPNs Accessed by EIP {eip}')
+        plt.xlabel('Clock Cycle')
+        plt.ylabel('vpn')
+        plt.title(f'VPNs Accessed by eip {eip}')
         plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 
         # Adjust layout

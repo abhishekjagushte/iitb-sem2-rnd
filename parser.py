@@ -1,19 +1,5 @@
 import csv
 
-workloads = [
-    "bc",
-    "bfs",
-    "cc",
-    "dlrm",
-    "gc",
-    "gen",
-    "pr",
-    "rnd",
-    "sssp",
-    "tc",
-    "xs"
-]
-
 
 
 def get_results_map(fodler_path, workload):
@@ -31,7 +17,7 @@ def get_results_map(fodler_path, workload):
 
     return d
 
-def get_data_csv(results):
+def get_data_csv(results, workloads, columns):
     data = [["workload"] + columns + ["dram.acceeses"]]
  
     for wl in workloads:
@@ -58,7 +44,7 @@ def write_csv(filename, data):
         csv_writer.writerows(data)
 
 
-def parse_data(data_folder):
+def parse_data(data_folder, workloads):
     data = {}
 
     for wl in workloads:
@@ -68,7 +54,7 @@ def parse_data(data_folder):
     return data
 
 
-def parse(base_folder, comparison_folder):
+def parse(base_folder, comparison_folder, workloads):
     baseline = {}
     comparison = {}
 
