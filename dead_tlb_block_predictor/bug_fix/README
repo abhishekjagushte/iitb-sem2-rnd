@@ -1,0 +1,6 @@
+The tlb reuse range is as follows:
+0: 0
+1: 0-20
+2: 20-50
+3: 50-100
+4: >100
