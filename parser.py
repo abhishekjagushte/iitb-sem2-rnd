@@ -11,9 +11,9 @@ def get_results_map(fodler_path, workload):
         for line in lines:
             line = line.strip()
             splits = line.split(" ")
-            d[splits[0]] = splits[2]
+            d[splits[0]] = int(splits[2])
 
-    # print(d)
+    print(d)
 
     return d
 
