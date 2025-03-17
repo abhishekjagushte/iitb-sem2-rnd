@@ -1,0 +1,1 @@
+Here the modified blocks are promoted to rrip = 0 on access, just like TLB blocks.
